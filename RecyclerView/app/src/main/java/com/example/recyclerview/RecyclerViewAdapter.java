@@ -1,11 +1,13 @@
 package com.example.recyclerview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,10 +19,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     TextView title;
     TextView descrpition;
 
-    public RecyclerViewAdapter(Context mcontext, String[] TitlesArray, String[] DescriptionsArray ) {
+    public RecyclerViewAdapter(Context context, String[] TitlesArray, String[] DescriptionsArray ) {
         this.titles = TitlesArray;
         this.descriptions = DescriptionsArray;
-        this.mcontext = mcontext;
+        this.mcontext = context;
     }
 
     @NonNull
@@ -46,17 +48,22 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView title;
         TextView descriptionText;
         LinearLayout parentLayout;
+        Context context;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             title=itemView.findViewById(R.id.title);
             descriptionText=itemView.findViewById(R.id.description);
             parentLayout=itemView.findViewById(R.id.parent_layout);
+            itemView.setOnClickListener(this);
+            context = itemView.getContext();
         }
 
         @Override
         public void onClick(View v) {
             int myPosition = getLayoutPosition();
-            String element = titles[myPosition];
+            Intent i = new Intent(context, MovieInfo.class);
+            i.putExtra("key", myPosition);
+            context.startActivity(i);
         }
     }
 }

@@ -14,8 +14,18 @@ import android.widget.TextView;
 
 public class MovieInfo extends AppCompatActivity {
     final Integer[] covers = new Integer[]{R.drawable.f1,R.drawable.f2,R.drawable.f3,R.drawable.f4,R.drawable.f5,R.drawable.f6,R.drawable.f7,R.drawable.f8};
-    final String characters = "Dominic Toretto\n\t\t\tLetty Ortiz\n\t\t\tMia toretto\n\t\t\tBrian O'Conner\n\t\t\tVince\n\t\t\tJesse\n\t\t\tLeon\n\t\t\tHan Lue";
+    final String[][] mainCharacters = new String[][]{
+            {"Dominic Toretto", "Brian O'Connor", "Letty Ortiz", "Mia Toretto", "Vince"},
+            {"Brian O'Connor", "Roman Pearce", "Tej Parker"},
+            {"Sean Boswell", "Han Seoul-Oh"},
+            {"Dominic Toretto", "Brian O'Connor", "Letty Ortiz", "Mia Toretto", "Han Seoul-Oh", "Gisele Yashar"},
+            {"Dominic Toretto", "Brian O'Connor", "Letty Ortiz", "Mia Toretto", "Han Seoul-Oh", "Gisele Yashar", "Roman Pearce", "Tej Parker", "Luke Hobbs", "Vince"},
+            {"Dominic Toretto", "Brian O'Connor", "Letty Ortiz", "Mia Toretto", "Han Seoul-Oh", "Gisele Yashar", "Roman Pearce", "Tej Parker", "Luke Hobbs"},
+            {"Dominic Toretto", "Brian O'Connor", "Letty Ortiz", "Mia Toretto", "Roman Pearce", "Tej Parker", "Luke Hobbs"},
+            {"Dominic Toretto", "Letty Ortiz", "Roman Pearce", "Tej Parker", "Luke Hobbs"}
+    };
     int position = 0;
+    String characters = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +43,11 @@ public class MovieInfo extends AppCompatActivity {
         img.setScaleType(ImageView.ScaleType.FIT_CENTER);
         img.setImageResource(covers[position]);
         TextView charList = findViewById(R.id.characterList);
-        charList.setText("Main characters:\n\t\t\t" + characters);
+
+        for(String s : mainCharacters[position]){
+            characters += "\t\t\t\t" + s + "\n";
+        }
+
+        charList.setText("Main characters:\n" + characters);
     }
 }

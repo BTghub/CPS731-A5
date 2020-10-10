@@ -25,10 +25,11 @@
         android:layout_width="402dp"
         android:layout_height="312dp"
         android:layout_marginTop="400dp"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="30dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

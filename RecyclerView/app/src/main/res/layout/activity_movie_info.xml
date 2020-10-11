@@ -13,7 +13,7 @@
         android:layout_height="321dp"
         android:layout_marginTop="64dp"
         android:contentDescription="@string/movie_cover"
-        android:scaleType="fitCenter"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

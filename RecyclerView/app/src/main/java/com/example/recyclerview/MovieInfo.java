@@ -40,7 +40,7 @@ public class MovieInfo extends AppCompatActivity {
         }
         // Set cover image and text
         ImageView img = findViewById(R.id.movieCover);
-        img.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        img.setScaleType(ImageView.ScaleType.FIT_XY);
         img.setImageResource(covers[position]);
         TextView charList = findViewById(R.id.characterList);
 

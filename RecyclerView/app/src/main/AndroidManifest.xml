@@ -9,17 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OpeningSplashActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
-            android:name=".MovieInfo"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".MainActivity">
+            android:name=".FilmTitleListActivity"
+            android:label="@string/title_filmtitle_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".FilmTitleDetailActivity"
+            android:label="@string/title_filmtitle_detail"
+            android:parentActivityName=".FilmTitleListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.recyclerview.FilmTitleListActivity" />
+        </activity>
+        <activity android:name=".OpeningSplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
